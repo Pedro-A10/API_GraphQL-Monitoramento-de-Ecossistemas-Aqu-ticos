@@ -10,6 +10,7 @@ type Mutation {
 type CorpoDagua {
 	id: ID!
 	nome: String!
+	tipo: TipoAgua!
 	sensores: [Sensor!]!
 }
 
