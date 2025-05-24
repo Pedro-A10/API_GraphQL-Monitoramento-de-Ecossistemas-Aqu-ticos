@@ -1,0 +1,20 @@
+type Query {
+	listarCorposDagua: [CorpoDagua!]!
+	buscarSensor(id: ID!): Sensor
+}
+
+type Mutation {
+	registrarLeitura(SensorId: ID!, valor: Float!): Leitura!
+}
+
+type CorpoDagua {
+	id: ID!
+	nome: String!
+	sensores: [Sensor!]!
+}
+
+type Sensor {
+	id: ID!
+	tipo: TipoSensor!
+}
+	
