@@ -1,7 +1,5 @@
 # API_GraphQL-Monitoramento-de-Ecossistemas-Aquaticos
 
-# API_GraphQL-Monitoramento-de-Ecossistemas-Aquaticos
-
 <details>
   <summary>Ver diagrama do sistema</summary>
   
