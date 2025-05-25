@@ -67,7 +67,7 @@ public class Alerta {
 	
 	public void validarCamposObrigatorios() {
 		if(this.tipo == null || this.sensor == null) {
-			throw new IllegalArgumentException("Tipo e sensor são obrigatórios");
+			throw new IllegalArgumentException("Tipo e sensor são obrigatórios.");
 		}
 	}
 	
