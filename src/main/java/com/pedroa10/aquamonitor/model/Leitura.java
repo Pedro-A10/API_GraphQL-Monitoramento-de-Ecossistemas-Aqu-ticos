@@ -4,6 +4,9 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
+import com.pedroa10.aquamonitor.model.enums.PrioridadeAlerta;
+import com.pedroa10.aquamonitor.model.enums.TipoAlerta;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -57,6 +60,18 @@ public class Leitura {
 		};
 		this.anomalia = isAnomalia;
 		return isAnomalia;
+	}
+	
+	public Alerta gerarAlerta() {
+		if(!anomalia) return null;
+		
+		Alerta alerta = new Alerta();
+		alerta.setTipo(TipoAlerta.fromSensorType(sensor.getTipo()));
+		alerta.setDescricao("Leitura anômala detectada: " + valor);
+		alerta.setDataCriacao(Instant.now());
+		alerta.setPrioridade(PrioridadeAlerta.ALTA);
+		alerta.setSensor(sensor);
+		return alerta;
 	}
 	
 	public ZonedDateTime getTimestampAsZonedDateTime(ZoneId zoneId) {
