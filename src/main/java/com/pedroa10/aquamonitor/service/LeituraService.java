@@ -14,3 +14,4 @@ public interface LeituraService {
 	List<Leitura> buscarAnomalias();
 	double calcularMediaPorIntervalo(Long sensorId, Instant inicio, Instant fim);
 }
+ 
